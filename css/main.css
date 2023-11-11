@@ -6,8 +6,8 @@
 }
 
 .absolute-color {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   display: none;
   border-radius: 500px;
   opacity: 0.5;
@@ -55,6 +55,44 @@
   width: 48px;
   height: 48px;
   display: none;
+}
+
+.menu ul {
+  top: 90px;
+  width: 50%;
+  background-color: aqua;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 40px;
+}
+
+.menu ul li {
+  width: 50%;
+  text-align: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.menu ul li:hover {
+  background-color: black;
+}
+
+.menu ul li:hover a {
+  color: white;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
 }
 
 .navigation {
@@ -178,6 +216,30 @@
   .menu {
     display: block;
   }
+  .menu ul {
+    display: none;
+  }
+  .menu:hover ul {
+    display: block;
+    gap: 40px;
+    width: 50%;
+  }
+  .menu:hover ul li {
+    list-style: none;
+  }
+  .menu ul {
+    display: none;
+    position: absolute;
+    top: 80px;
+    gap: 10px;
+    width: 50%;
+    left: 0;
+  }
+  .menu ul li {
+    width: 100%;
+    background-color: red;
+    padding: 10px 0px;
+  }
 }
 
 @media screen and (max-width: 767.98px) {
@@ -187,12 +249,25 @@
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    position: relative;
   }
   .absolute-color {
     display: none;
   }
   .nav-buttons {
     display: none;
+  }
+  .menu ul {
+    display: none;
+    position: absolute;
+    top: 80px;
+    gap: 10px;
+    width: 110%;
+    left: 0;
+  }
+  .menu ul li {
+    background-color: red;
+    padding: 10px 0px;
   }
 }
 

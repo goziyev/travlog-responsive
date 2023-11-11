@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 .absolute-color {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   display: none;
   border-radius: 500px;
   opacity: 0.5;
@@ -51,6 +51,39 @@
   width: 48px;
   height: 48px;
   display: none;
+}
+
+
+.menu ul{
+  top: 90px;
+  width:50%;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 40px;
+  
+}
+.menu ul li {
+  width: 50%;
+  text-align: center;
+  // list-style: none;
+
+  transition: all 0.5s ease;
+  &:hover{
+    background-color:black;
+    a{
+      color:white
+    }
+  }
+}
+.menu ul li a{
+  text-decoration: none;
+  color:white;
+  font-size: 20px;
+
 }
 .navigation {
   display: flex;
@@ -150,18 +183,60 @@
   }
   .menu {
     display: block;
+    ul{
+      display: none;
+    }
   }
+
+  .menu:hover ul{
+    display: block;
+    gap: 40px;
+    width: 50%;
+    li {
+      list-style: none;
+    }
+  }
+  .menu ul {
+    display: none;
+    position: absolute;
+    top: 80px;
+    gap: 10px;
+    width: 50%;
+    left: 0;
+    li{
+      width: 100%;
+      background-color:red;
+      padding:10px 0px;
+      
+    }
+  }
+
+  
 }
 @media screen and (max-width: 767.98px) {
   .nav-container {
     max-width: 398px;
     flex-direction: row-reverse;
+    position: relative;
   }
   .absolute-color {
     display: none;
   }
   .nav-buttons {
     display: none;
+  }
+  .menu ul {
+    display: none;
+    position: absolute;
+    top: 80px;
+    gap: 10px;
+    width: 110%;
+    left: 0;
+    li{
+      background-color:red;
+      padding:10px 0px;
+      
+    }
   }
 }
 
